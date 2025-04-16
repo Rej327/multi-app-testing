@@ -13,17 +13,17 @@ jobs:
       - name: Checkout test repo
         uses: actions/checkout@v3
 
-      - name: secret-page-app
+      - name: scic-worksheet-secret-page-app
         run: |
           git clone https://github.com/Rej327/scic-worksheet-secret-page-app.git
-          cd secret-page-app
+          cd scic-worksheet-secret-page-app
           npm install
           npm test || echo "TESTING... SPA"
           cd ..
 
-      - name: multiple-activities-app
+      - name: scic-worksheet-multiple-activity-app
         run: |
           git https://github.com/Rej327/scic-worksheet-multiple-activity-app.git
-          cd multiple-activities-app
+          cd scic-worksheet-multiple-activity-app
           npm install
           npm test || echo "TESTING... MAP"
