@@ -23,7 +23,7 @@ jobs:
 
       - name: scic-worksheet-multiple-activity-app
         run: |
-          git https://github.com/Rej327/scic-worksheet-multiple-activity-app.git
+          git clone https://github.com/Rej327/scic-worksheet-multiple-activity-app.git
           cd scic-worksheet-multiple-activity-app
           npm install
           npm test || echo "TESTING... MAP"
