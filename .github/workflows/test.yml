@@ -1,0 +1,29 @@
+name: RUN MULTI TEST
+
+on:
+  workflow_dispatch:  # Manually triggered for now
+  push:
+    branches: [main]  # You can change to another branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout test repo
+        uses: actions/checkout@v3
+
+      - name: secret-page-app
+        run: |
+          git clone https://github.com/Rej327/scic-worksheet-secret-page-app.git
+          cd secret-page-app
+          npm install
+          npm test || echo "TESTING... SPA"
+          cd ..
+
+      - name: multiple-activities-app
+        run: |
+          git https://github.com/Rej327/scic-worksheet-multiple-activity-app.git
+          cd multiple-activities-app
+          npm install
+          npm test || echo "TESTING... MAP"
